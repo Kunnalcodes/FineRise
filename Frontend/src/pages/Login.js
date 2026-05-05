@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import API_URL from "../config";
 import AuthContext from "../AuthContext";
 import { MagneticButton } from "../components/MagneticButton";
 import { motion } from "framer-motion";
@@ -18,7 +19,7 @@ function Login() {
   const doLogin = async (email, password) => {
     setLoggingIn(true);
     try {
-      const res = await fetch("http://localhost:4000/api/login", {
+      const res = await fetch(`${API_URL}/api/login`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ email, password }),

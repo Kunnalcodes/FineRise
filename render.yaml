@@ -1,0 +1,28 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: finerise-backend
+    runtime: node
+    plan: free
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: 4000
+
+  # Frontend Static Site
+  - type: web
+    name: finerise-frontend
+    runtime: static
+    rootDir: Frontend
+    buildCommand: npm install && npm run build
+    staticPublishDir: build
+    envVars:
+      - key: REACT_APP_API_URL
+        fromService:
+          name: finerise-backend
+          type: web
+          property: host
