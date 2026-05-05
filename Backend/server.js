@@ -15,6 +15,11 @@ main();
 app.use(express.json());
 app.use(cors());
 
+// Root Route
+app.get("/", (req, res) => {
+  res.json({ status: "Success", message: "FineRise Backend Server is Running" });
+});
+
 // Store API
 app.use("/api/store", storeRoute);
 
