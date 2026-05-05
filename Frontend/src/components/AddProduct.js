@@ -1,4 +1,5 @@
 import { Fragment, useContext, useRef, useState } from "react";
+import API_URL from "../config";
 import { Dialog, Transition } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import AuthContext from "../AuthContext";
@@ -24,7 +25,7 @@ export default function AddProduct({
   };
 
   const addProduct = () => {
-    fetch("http://localhost:4000/api/product/add", {
+    fetch(`${API_URL}/api/product/add`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
