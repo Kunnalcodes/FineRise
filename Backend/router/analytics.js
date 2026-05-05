@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const Sales = require("../models/sales");
-const Product = require("../models/Product");
+const Product = require("../models/product");
 
 // GET: Advanced Analytics for Intelligence Hub
 router.get("/advanced/:userID", async (req, res) => {

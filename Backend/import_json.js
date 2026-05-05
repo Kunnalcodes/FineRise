@@ -9,7 +9,7 @@ const fs       = require("fs");
 
 // ── Models ──────────────────────────────────────────────────────────────────
 const User     = require("./models/users");
-const Product  = require("./models/Product");
+const Product  = require("./models/product");
 const Store    = require("./models/store");
 const Sales    = require("./models/sales");
 const Purchase = require("./models/purchase");

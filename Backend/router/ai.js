@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Sales = require("../models/sales");
-const Product = require("../models/Product");
+const Product = require("../models/product");
 const { SimpleLinearRegression } = require("ml-regression");
 
 // 1. Forecast Sales (AI functionality based on Time-Series / Linear Regression)

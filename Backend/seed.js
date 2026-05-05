@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
 const User = require("./models/users");
-const Product = require("./models/Product");
+const Product = require("./models/product");
 const Store = require("./models/store");
 const { main: connectDB } = require("./models/index");
 
