@@ -1,0 +1,65 @@
+{
+  "users": [
+    {
+      "_id": "6429979b2e5434138eda1564",
+      "firstName": "Admin",
+      "lastName": "Finerise",
+      "email": "admin@finerise.com",
+      "password": "password123",
+      "phoneNumber": 9876543210,
+      "imageUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=FineRise"
+    }
+  ],
+
+  "stores": [
+    { "_id": "6429979b2e5434138eda2001", "userID": "6429979b2e5434138eda1564", "name": "FineRise Tech Hub",       "category": "Electronics", "address": "12 Innovation Blvd", "city": "Bangalore", "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400" },
+    { "_id": "6429979b2e5434138eda2002", "userID": "6429979b2e5434138eda1564", "name": "Silicon Valley Outlet",   "category": "Electronics", "address": "88 Tech Park Ave",   "city": "Hyderabad", "image": "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=400" },
+    { "_id": "6429979b2e5434138eda2003", "userID": "6429979b2e5434138eda1564", "name": "Global Gadgets",          "category": "Electronics", "address": "55 Digital Street",  "city": "Mumbai",    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400" },
+    { "_id": "6429979b2e5434138eda2004", "userID": "6429979b2e5434138eda1564", "name": "Elite Electronics",       "category": "Premium",     "address": "9 Luxe Lane",        "city": "Delhi",     "image": "https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?w=400" },
+    { "_id": "6429979b2e5434138eda2005", "userID": "6429979b2e5434138eda1564", "name": "Future Shop",             "category": "General",     "address": "3 Commerce Road",    "city": "Chennai",   "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400" }
+  ],
+
+  "products": [
+    { "_id": "6429979b2e5434138eda1001", "userID": "6429979b2e5434138eda1564", "name": "iPhone 15 Pro",          "manufacturer": "Apple",     "stock": 60,  "description": "Apple's flagship smartphone with A17 Pro chip" },
+    { "_id": "6429979b2e5434138eda1002", "userID": "6429979b2e5434138eda1564", "name": "MacBook Pro M3",         "manufacturer": "Apple",     "stock": 35,  "description": "Pro laptop with M3 chip and Liquid Retina XDR display" },
+    { "_id": "6429979b2e5434138eda1003", "userID": "6429979b2e5434138eda1564", "name": "Galaxy S24 Ultra",       "manufacturer": "Samsung",   "stock": 80,  "description": "Samsung flagship with built-in S Pen" },
+    { "_id": "6429979b2e5434138eda1004", "userID": "6429979b2e5434138eda1564", "name": "Sony WH-1000XM5",       "manufacturer": "Sony",      "stock": 150, "description": "Industry-leading noise-cancelling headphones" },
+    { "_id": "6429979b2e5434138eda1005", "userID": "6429979b2e5434138eda1564", "name": "Logitech MX Master 3S", "manufacturer": "Logitech",  "stock": 200, "description": "Advanced wireless ergonomic mouse" },
+    { "_id": "6429979b2e5434138eda1006", "userID": "6429979b2e5434138eda1564", "name": "iPad Air",              "manufacturer": "Apple",     "stock": 75,  "description": "Thin and powerful iPad with M1 chip" },
+    { "_id": "6429979b2e5434138eda1007", "userID": "6429979b2e5434138eda1564", "name": "Kindle Paperwhite",     "manufacturer": "Amazon",    "stock": 120, "description": "Waterproof e-reader with sharp display" },
+    { "_id": "6429979b2e5434138eda1008", "userID": "6429979b2e5434138eda1564", "name": "Nintendo Switch OLED",  "manufacturer": "Nintendo",  "stock": 55,  "description": "Versatile gaming console with OLED screen" },
+    { "_id": "6429979b2e5434138eda1009", "userID": "6429979b2e5434138eda1564", "name": "Keychron K2",           "manufacturer": "Keychron",  "stock": 180, "description": "Compact wireless mechanical keyboard" }
+  ],
+
+  "sales": [
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1001", "StoreID": "6429979b2e5434138eda2001", "StockSold": 2,  "SaleDate": "2026-01-10", "TotalSaleAmount": 2400 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1002", "StoreID": "6429979b2e5434138eda2002", "StockSold": 1,  "SaleDate": "2026-01-15", "TotalSaleAmount": 3500 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1003", "StoreID": "6429979b2e5434138eda2003", "StockSold": 3,  "SaleDate": "2026-01-20", "TotalSaleAmount": 3900 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1004", "StoreID": "6429979b2e5434138eda2004", "StockSold": 5,  "SaleDate": "2026-02-05", "TotalSaleAmount": 1750 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1005", "StoreID": "6429979b2e5434138eda2005", "StockSold": 10, "SaleDate": "2026-02-14", "TotalSaleAmount": 1000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1006", "StoreID": "6429979b2e5434138eda2001", "StockSold": 4,  "SaleDate": "2026-02-20", "TotalSaleAmount": 2400 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1007", "StoreID": "6429979b2e5434138eda2003", "StockSold": 8,  "SaleDate": "2026-03-01", "TotalSaleAmount": 1120 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1008", "StoreID": "6429979b2e5434138eda2002", "StockSold": 6,  "SaleDate": "2026-03-10", "TotalSaleAmount": 2100 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1009", "StoreID": "6429979b2e5434138eda2004", "StockSold": 12, "SaleDate": "2026-03-18", "TotalSaleAmount": 1200 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1001", "StoreID": "6429979b2e5434138eda2005", "StockSold": 1,  "SaleDate": "2026-03-25", "TotalSaleAmount": 1200 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1004", "StoreID": "6429979b2e5434138eda2001", "StockSold": 8,  "SaleDate": "2026-04-02", "TotalSaleAmount": 2800 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1003", "StoreID": "6429979b2e5434138eda2002", "StockSold": 4,  "SaleDate": "2026-04-08", "TotalSaleAmount": 5200 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1006", "StoreID": "6429979b2e5434138eda2003", "StockSold": 5,  "SaleDate": "2026-04-15", "TotalSaleAmount": 3000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1002", "StoreID": "6429979b2e5434138eda2004", "StockSold": 2,  "SaleDate": "2026-04-16", "TotalSaleAmount": 7000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1008", "StoreID": "6429979b2e5434138eda2005", "StockSold": 7,  "SaleDate": "2026-04-22", "TotalSaleAmount": 2450 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1005", "StoreID": "6429979b2e5434138eda2001", "StockSold": 20, "SaleDate": "2026-04-19", "TotalSaleAmount": 2000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1009", "StoreID": "6429979b2e5434138eda2002", "StockSold": 15, "SaleDate": "2026-04-23", "TotalSaleAmount": 1500 }
+  ],
+
+  "purchases": [
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1001", "QuantityPurchased": 80,  "PurchaseDate": "2026-01-02", "TotalPurchaseAmount": 1680 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1002", "QuantityPurchased": 40,  "PurchaseDate": "2026-01-05", "TotalPurchaseAmount": 5600 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1003", "QuantityPurchased": 100, "PurchaseDate": "2026-01-08", "TotalPurchaseAmount": 10000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1004", "QuantityPurchased": 200, "PurchaseDate": "2026-02-01", "TotalPurchaseAmount": 46000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1005", "QuantityPurchased": 300, "PurchaseDate": "2026-02-10", "TotalPurchaseAmount": 21000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1006", "QuantityPurchased": 100, "PurchaseDate": "2026-03-01", "TotalPurchaseAmount": 45000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1007", "QuantityPurchased": 150, "PurchaseDate": "2026-03-05", "TotalPurchaseAmount": 15000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1008", "QuantityPurchased": 80,  "PurchaseDate": "2026-03-12", "TotalPurchaseAmount": 24000 },
+    { "userID": "6429979b2e5434138eda1564", "ProductID": "6429979b2e5434138eda1009", "QuantityPurchased": 250, "PurchaseDate": "2026-04-01", "TotalPurchaseAmount": 17500 }
+  ]
+}

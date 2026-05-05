@@ -1,0 +1,189 @@
+/* ─── Dashboard ─────────────────────────────────────────────────── */
+.container {
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  animation: gentleRise 0.5s var(--ease-gentle) both;
+}
+
+/* ── Header ── */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.headerIcon {
+  width: 52px;
+  height: 52px;
+  background: var(--primary);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px -6px var(--primary);
+}
+
+.mainTitle {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--on-surface);
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.mainSubtitle {
+  font-size: 1rem;
+  color: var(--on-surface-variant);
+  margin: 0.2rem 0 0;
+}
+
+/* ── Stats Grid ── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .statsGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Stat Card ── */
+.statCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.3s var(--ease-gentle);
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.12);
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.statIconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trendBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.trendUp { background: #f0fdf4; color: #166534; }
+.trendDown { background: #fef2f2; color: #991b1b; }
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-surface-variant);
+  margin-bottom: 0.4rem;
+}
+
+.statValue {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--on-surface);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.statSubtext {
+  font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+/* ── Charts ── */
+.chartsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .chartsRow { flex-direction: row; }
+}
+
+.chartCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.chartTitle {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--on-surface);
+  margin: 0;
+}
+
+.chartSubtitle {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  margin: 0.25rem 0 0;
+}
+
+.plotlyWrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fcfdfe;
+}
+
+@keyframes gentleRise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

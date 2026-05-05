@@ -1,0 +1,176 @@
+/* ─── AIInsights ─────────────────────────────────────────────────── */
+.container {
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  animation: gentleRise 0.5s var(--ease-gentle) both;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--on-surface);
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0.6rem 0 0;
+  font-size: 1rem;
+  color: var(--on-surface-variant);
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+/* ── Loader ── */
+.loaderWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 0;
+  gap: 1.5rem;
+}
+
+.loader {
+  width: 56px;
+  height: 56px;
+  border: 4px solid rgba(26,64,77,0.08);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ── Grid Layout ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Card Styling ── */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.08);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-gentle);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.12);
+  border-color: rgba(26, 64, 77, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.card.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.chartWrapper {
+  background: #fcfdfe;
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Insight Section ── */
+.insightToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--surface-low);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-gentle);
+  user-select: none;
+}
+
+.insightToggle:hover {
+  background: var(--secondary-container);
+}
+
+.insightLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.insightArrow {
+  transition: transform 0.3s var(--ease-gentle);
+}
+
+.insightArrow.active {
+  transform: rotate(180deg);
+}
+
+.insightContent {
+  padding: 0.5rem 1.25rem 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--on-surface-variant);
+  border-left: 2px solid var(--primary-container);
+  margin-left: 0.5rem;
+  animation: slideDown 0.4s var(--ease-gentle) both;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentleRise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

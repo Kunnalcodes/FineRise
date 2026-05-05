@@ -1,0 +1,283 @@
+/* Tailwind CSS Modules */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* ─── Google Fonts ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ─── FineRise Design Tokens ────────────────────────────────────────────────── */
+:root {
+  /* Primary group */
+  --primary:            #1a404d;
+  --primary-container:  #335765;
+  --on-primary:         #f4fbf5;
+
+  /* Secondary group */
+  --secondary:          #336763;
+  --secondary-container:#b7ede8;
+  --on-secondary:       #0a201e;
+
+  /* Tertiary group */
+  --tertiary:           #56321d;
+  --tertiary-fixed:     #ffdbca;
+  --tertiary-container: #7d4e38;
+
+  /* Neutral / Surface group */
+  --surface:            #f4fbf5;
+  --surface-low:        #eaf4ec;
+  --surface-card:       #ffffff;
+  --surface-high:       #dff0e1;
+  --on-surface:         #161d1a;
+  --on-surface-variant: #41484b;
+  --outline-variant:    rgba(193,199,203,0.15);
+
+  /* Chart accent kept for charts */
+  --accent-chart-1: #1a404d;
+  --accent-chart-2: #336763;
+  --accent-chart-3: #56321d;
+  --accent-chart-4: #335765;
+
+  /* Ambient shadow */
+  --shadow-card: 0 20px 40px rgba(22,29,26,0.04), 0 4px 12px rgba(22,29,26,0.04);
+  --shadow-float: 0 8px 32px rgba(26,64,77,0.18);
+
+  /* Motion */
+  --ease-gentle: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-gentle: 300ms;
+
+  /* Legacy var aliases – keeps older module refs working */
+  --primary-hover: #335765;
+  --glass-bg:      rgba(255,255,255,0.72);
+  --glass-border:  rgba(255,255,255,0.4);
+  --card-shadow:   var(--shadow-card);
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--surface);
+  min-height: 100vh;
+  color: var(--on-surface);
+  line-height: 1.5;
+}
+
+/* ─── Typography Scale ───────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ─── Utility: Glass Card ────────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ─── Utility: Surface Card ──────────────────────────────────────────────────── */
+.surface-card {
+  background: var(--surface-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ─── Utility: Premium Button (fallback for non-magnetic buttons) ────────────── */
+.premium-button {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  color: var(--on-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: transform var(--duration-gentle) var(--ease-gentle),
+              box-shadow var(--duration-gentle) var(--ease-gentle);
+  box-shadow: 0 4px 14px rgba(26,64,77,0.28);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.premium-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(26,64,77,0.38);
+}
+
+.premium-button:active {
+  transform: translateY(0);
+}
+
+/* ─── Utility: Inventory Pulse Chip ─────────────────────────────────────────── */
+.pulse-healthy {
+  background: var(--secondary-container);
+  color: var(--on-secondary);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.pulse-low {
+  background: var(--tertiary-fixed);
+  color: var(--tertiary);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* ─── Utility: Label Cap ─────────────────────────────────────────────────────── */
+.label-cap {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+/* ─── Utility: Table ─────────────────────────────────────────────────────────── */
+.finerise-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  font-family: 'Inter', sans-serif;
+}
+
+.finerise-table thead tr th {
+  background: transparent;
+  padding: 0.625rem 1rem;
+  text-align: left;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  border-bottom: none;
+}
+
+.finerise-table tbody tr {
+  background: var(--surface-card);
+  transition: transform var(--duration-gentle) var(--ease-gentle),
+              box-shadow var(--duration-gentle) var(--ease-gentle);
+  border-radius: 10px;
+}
+
+.finerise-table tbody tr:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card);
+}
+
+.finerise-table tbody tr td {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--on-surface);
+  border: none;
+}
+
+.finerise-table tbody tr td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.finerise-table tbody tr td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+/* ─── Utility: Search Input ──────────────────────────────────────────────────── */
+.finerise-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-card);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 0.5rem 0.875rem;
+  box-shadow: 0 2px 8px rgba(22,29,26,0.04);
+  transition: border-color var(--duration-gentle) var(--ease-gentle),
+              box-shadow var(--duration-gentle) var(--ease-gentle);
+}
+
+.finerise-search:focus-within {
+  border-color: rgba(26,64,77,0.35);
+  box-shadow: 0 0 0 3px rgba(26,64,77,0.08);
+}
+
+.finerise-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--on-surface);
+  width: 200px;
+}
+
+.finerise-search input::placeholder {
+  color: rgba(65,72,75,0.45);
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────────────────────── */
+@keyframes gentleRise {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(26,64,77,0.25); }
+  70%  { box-shadow: 0 0 0 10px rgba(26,64,77,0); }
+  100% { box-shadow: 0 0 0 0 rgba(26,64,77,0); }
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(26,64,77,0.2);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26,64,77,0.35);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
