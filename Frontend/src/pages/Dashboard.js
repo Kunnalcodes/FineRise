@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useMemo } from "react";
 import AuthContext from "../AuthContext";
+import API_URL from "../config";
 import styles from "./Dashboard.module.css";
 import { MagneticButton } from "../components/MagneticButton";
 import { motion, AnimatePresence } from "framer-motion";
@@ -77,12 +78,12 @@ function Dashboard() {
   const fetchAllData = () => {
     const userID = authContext.user;
     Promise.all([
-      fetch(`http://localhost:4000/api/sales/get/${userID}/totalsaleamount`).then(r => r.json()),
-      fetch(`http://localhost:4000/api/purchase/get/${userID}/totalpurchaseamount`).then(r => r.json()),
-      fetch(`http://localhost:4000/api/store/get/${userID}`).then(r => r.json()),
-      fetch(`http://localhost:4000/api/product/get/${userID}`).then(r => r.json()),
-      fetch(`http://localhost:4000/api/sales/getmonthly`).then(r => r.json()),
-      fetch(`http://localhost:4000/api/analytics/overview/${userID}`).then(r => r.json())
+      fetch(`${API_URL}/api/sales/get/${userID}/totalsaleamount`).then(r => r.json()),
+      fetch(`${API_URL}/api/purchase/get/${userID}/totalpurchaseamount`).then(r => r.json()),
+      fetch(`${API_URL}/api/store/get/${userID}`).then(r => r.json()),
+      fetch(`${API_URL}/api/product/get/${userID}`).then(r => r.json()),
+      fetch(`${API_URL}/api/sales/getmonthly`).then(r => r.json()),
+      fetch(`${API_URL}/api/analytics/overview/${userID}`).then(r => r.json())
     ]).then(([sale, purchase, storesRes, productsRes, monthly, analyticsRes]) => {
       setSaleAmount(sale.totalSaleAmount);
       setPurchaseAmount(purchase.totalPurchaseAmount);

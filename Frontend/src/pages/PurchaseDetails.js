@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import AddPurchaseDetails from "../components/AddPurchaseDetails";
+import API_URL from "../config";
 import AuthContext from "../AuthContext";
 import styles from "./PurchaseDetails.module.css";
 import { MagneticButton } from "../components/MagneticButton";
@@ -20,7 +21,7 @@ function PurchaseDetails() {
   }, [updatePage]);
 
   const fetchPurchaseData = () => {
-    fetch(`http://localhost:4000/api/purchase/get/${authContext.user}`)
+    fetch(`${API_URL}/api/purchase/get/${authContext.user}`)
       .then((r) => r.json())
       .then((d) => setAllPurchaseData(d))
       .catch(console.error);
@@ -28,13 +29,13 @@ function PurchaseDetails() {
 
   const deletePurchase = (id) => {
     if (!window.confirm("Are you sure? This will also revert the stock level for this product.")) return;
-    fetch(`http://localhost:4000/api/purchase/delete/${id}`, { method: "DELETE" })
+    fetch(`${API_URL}/api/purchase/delete/${id}`, { method: "DELETE" })
       .then(() => handlePageUpdate())
       .catch(console.error);
   };
 
   const fetchProductsData = () => {
-    fetch(`http://localhost:4000/api/product/get/${authContext.user}`)
+    fetch(`${API_URL}/api/product/get/${authContext.user}`)
       .then((r) => r.json())
       .then((d) => setAllProducts(d))
       .catch(console.error);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import AddStore from "../components/AddStore";
+import API_URL from "../config";
 import AuthContext from "../AuthContext";
 import styles from "./Store.module.css";
 import { MagneticButton } from "../components/MagneticButton";
@@ -17,7 +18,7 @@ function Store() {
   }, []);
 
   const fetchData = () => {
-    fetch(`http://localhost:4000/api/store/get/${authContext.user}`)
+    fetch(`${API_URL}/api/store/get/${authContext.user}`)
       .then((r) => r.json())
       .then((d) => setAllStores(d))
       .catch(console.error);

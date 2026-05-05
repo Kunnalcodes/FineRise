@@ -1,4 +1,5 @@
 import { Fragment, useRef, useState, useContext } from "react";
+import API_URL from "../config";
 import { Dialog, Transition } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import UploadImage from "./UploadImage";
@@ -23,7 +24,7 @@ export default function AddStore() {
   const cancelButtonRef = useRef(null);
 
   const addProduct = () => {
-    fetch("http://localhost:4000/api/store/add", {
+    fetch(`${API_URL}/api/store/add`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

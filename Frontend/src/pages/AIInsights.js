@@ -15,6 +15,7 @@ import {
 import { Line, Bar, Doughnut, Scatter, Radar, Bubble } from "react-chartjs-2";
 import styles from "./AIInsights.module.css";
 import { MagneticButton } from "../components/MagneticButton";
+import API_URL from "../config";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Zap, 
@@ -62,8 +63,8 @@ function AIInsights() {
       const userID = auth?._id || "6429979b2e5434138eda1564";
 
       const [salesRes, advRes] = await Promise.all([
-        fetch("http://localhost:4000/api/ai/forecast-sales"),
-        fetch(`http://localhost:4000/api/analytics/advanced/${userID}`)
+        fetch(`${API_URL}/api/ai/forecast-sales`),
+        fetch(`${API_URL}/api/analytics/advanced/${userID}`)
       ]);
 
       const salesData = await salesRes.json();

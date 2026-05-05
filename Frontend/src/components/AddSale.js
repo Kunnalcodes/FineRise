@@ -1,4 +1,5 @@
 import { Fragment, useRef, useState } from "react";
+import API_URL from "../config";
 import { Dialog, Transition } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
@@ -28,7 +29,7 @@ export default function AddSale({
 
   // POST Data
   const addSale = () => {
-    fetch("http://localhost:4000/api/sales/add", {
+    fetch(`${API_URL}/api/sales/add`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

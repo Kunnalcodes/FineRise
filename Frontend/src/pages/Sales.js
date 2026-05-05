@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import AddSale from "../components/AddSale";
+import API_URL from "../config";
 import AuthContext from "../AuthContext";
 import styles from "./Sales.module.css";
 import { MagneticButton } from "../components/MagneticButton";
@@ -23,27 +24,27 @@ function Sales() {
 
   const deleteSale = (id) => {
     if (!window.confirm("Are you sure? This will restore the stock level for this product.")) return;
-    fetch(`http://localhost:4000/api/sales/delete/${id}`, { method: "DELETE" })
+    fetch(`${API_URL}/api/sales/delete/${id}`, { method: "DELETE" })
       .then(() => handlePageUpdate())
       .catch(console.error);
   };
 
   const fetchSalesData = () => {
-    fetch(`http://localhost:4000/api/sales/get/${authContext.user}`)
+    fetch(`${API_URL}/api/sales/get/${authContext.user}`)
       .then((r) => r.json())
       .then((d) => setAllSalesData(d))
       .catch(console.error);
   };
 
   const fetchProductsData = () => {
-    fetch(`http://localhost:4000/api/product/get/${authContext.user}`)
+    fetch(`${API_URL}/api/product/get/${authContext.user}`)
       .then((r) => r.json())
       .then((d) => setAllProducts(d))
       .catch(console.error);
   };
 
   const fetchStoresData = () => {
-    fetch(`http://localhost:4000/api/store/get/${authContext.user}`)
+    fetch(`${API_URL}/api/store/get/${authContext.user}`)
       .then((r) => r.json())
       .then((d) => setAllStores(d))
       .catch(console.error);

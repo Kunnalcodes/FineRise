@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import UploadImage from "../components/UploadImage";
+import API_URL from "../config";
 import { MagneticButton } from "../components/MagneticButton";
 import { motion } from "framer-motion";
 import { BarChart2, Mail, Lock, User, Phone, ArrowRight } from "lucide-react";
@@ -22,7 +23,7 @@ function Register() {
   };
 
   const registerUser = () => {
-    fetch("http://localhost:4000/api/register", {
+    fetch(`${API_URL}/api/register`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(form),

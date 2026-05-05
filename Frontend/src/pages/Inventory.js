@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import AddProduct from "../components/AddProduct";
 import UpdateProduct from "../components/UpdateProduct";
 import AuthContext from "../AuthContext";
+import API_URL from "../config";
 import styles from "./Inventory.module.css";
 import { MagneticButton } from "../components/MagneticButton";
 import { SlideToConfirm } from "../components/SlideToConfirm";
@@ -39,7 +40,7 @@ function Inventory() {
   }, [updatePage]);
 
   const fetchProductsData = async () => {
-    const r = await fetch(`http://localhost:4000/api/product/get/${authContext.user}`);
+    const r = await fetch(`${API_URL}/api/product/get/${authContext.user}`);
     if (!r.ok) throw new Error("Fetch failed");
     const d = await r.json();
     setAllProducts(d);
@@ -51,7 +52,7 @@ function Inventory() {
       return;
     }
     try {
-      const r = await fetch(`http://localhost:4000/api/product/search?searchTerm=${searchTerm}&userId=${authContext.user}`);
+      const r = await fetch(`${API_URL}/api/product/search?searchTerm=${searchTerm}&userId=${authContext.user}`);
       const d = await r.json();
       setAllProducts(d);
     } catch (err) {
@@ -60,7 +61,7 @@ function Inventory() {
   };
 
   const fetchSalesData = async () => {
-    const r = await fetch(`http://localhost:4000/api/store/get/${authContext.user}`);
+    const r = await fetch(`${API_URL}/api/store/get/${authContext.user}`);
     if (!r.ok) throw new Error("Fetch failed");
     const d = await r.json();
     setAllStores(d);
@@ -73,7 +74,7 @@ function Inventory() {
   };
 
   const deleteItem = async (id) => {
-    fetch(`http://localhost:4000/api/product/delete/${id}`)
+    fetch(`${API_URL}/api/product/delete/${id}`)
       .then((r) => r.json())
       .then(() => setUpdatePage((p) => !p));
     setPendingDeleteId(null);
