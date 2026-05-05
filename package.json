@@ -1,0 +1,11 @@
+{
+  "name": "finerise-root",
+  "version": "1.0.0",
+  "description": "Root package to handle Render deployment for Backend",
+  "scripts": {
+    "postinstall": "npm install --prefix Backend",
+    "start": "npm start --prefix Backend"
+  },
+  "author": "",
+  "license": "ISC"
+}
