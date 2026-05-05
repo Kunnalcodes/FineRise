@@ -10,10 +10,20 @@ const Product = require("./models/product");
 
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 main();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://finerise-frontend.onrender.com",
+      "https://finerise.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    credentials: true,
+  })
+);
 
 // Root Route
 app.get("/", (req, res) => {
